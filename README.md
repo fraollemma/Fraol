@@ -1,4 +1,5 @@
 "# Fraol" 
+<<<<<<< HEAD
 const character = "#";
 const count = 8;
 const rows = [];
@@ -78,3 +79,8 @@ console.log(shifted);
 const unshifted = numbers.unshift(5);
 console.log(unshifted);
 console.log(numbers);
+=======
+"# Firaol" 
+"# Firaol" 
+>>>>>>> ddf11c9ccfbfd5e37d7ba6464c34a430b8faa3ec
+"# Puddle" 
