@@ -14,9 +14,9 @@ def new_conversation(request, item_pk):
   if item.created_by == request.user:
     return redirect('dashboard:index')
   
-  conversation = Conversation.objects.filter(item=item).filter(members__in=[request.user.id])
+  conversation = Conversation.objects.filter(item=item).filter(members__in=[request.user.id]).order_by('-modified_at')
   if conversation:
-    return redirect('conversation', pk=conversation.first().id)
+    return redirect('conversation:detail', pk=conversation.first().id)
   if request.method == 'POST':
     form = ConversationMessageForm(request.POST)
 
