@@ -1,27 +1,27 @@
 {% extends 'core/base.html' %}
 {% block title %}Log in{% endblock %}
 {% block content %}
-<div class="lcontainer">
-  <h1 class="lheading">Log in</h1>
+<div class="container">
+  <h1 class="heading">Log in</h1>
   <form method="post" action=".">
     {% csrf_token %}
-    <div class="lmb-3">
-      <label class="llabel">Username</label><br>
+    <div class="mb-3">
+      <label class="label">Username</label><br>
       {{ form.username }}
     </div>
     <div class="lmb-3">
-      <label class="llabel">Password</label><br>
+      <label class="label">Password</label><br>
       {{ form.password }}
     </div>
     {% if form.errors or form.non_field_errors %}
-    <div class="lerror">
+    <div class="error">
       {% for field in form %}
         {{ field.errors }}
       {% endfor %}
       {{ form.non_field_errors }}
     </div>
     {% endif %}
-    <button class="lbutton">Submit</button>
+    <button class="button">Submit</button>
   </form>
 </div>
 {% endblock %}

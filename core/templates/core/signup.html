@@ -1,35 +1,35 @@
 {% extends 'core/base.html' %}
 {% block title %}Sign up{% endblock %}
 {% block content %}
-<div class="scontainer">
-  <h1 class="sheading">Create Account</h1>
+<div class="container">
+  <h1 class="heading">Create Account</h1>
   <form method="post" action=".">
     {% csrf_token %}
-    <div class="smb-3">
-      <label class="slabel">Username</label><br>
+    <div class="mb-3">
+      <label class="label">Username</label><br>
       {{ form.username }}
     </div>
-    <div class="smb-3">
-      <label class="slabel">Email</label><br>
+    <div class="mb-3">
+      <label class="label">Email</label><br>
       {{ form.email }}
     </div>
-    <div class="smb-3">
-      <label class="slabel">Password</label><br>
+    <div class="mb-3">
+      <label class="label">Password</label><br>
       {{ form.password1 }}
     </div>
-    <div class="ssmb-3">
-      <label class="slabel">Repeat Password</label><br>
+    <div class="smb-3">
+      <label class="label">Repeat Password</label><br>
       {{ form.password2 }}
     </div>
     {% if form.errors or form.non_field_errors %}
-    <div class="serror">
+    <div class="error">
       {% for field in form %}
         {{ field.errors }}
       {% endfor %}
       {{ form.non_field_errors }}
     </div>
     {% endif %}
-    <button class="sbutton">Submit</button>
+    <button class="button">Submit</button>
   </form>
 </div>
 {% endblock %}
